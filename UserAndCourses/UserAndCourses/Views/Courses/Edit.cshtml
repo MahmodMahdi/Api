@@ -1,0 +1,36 @@
+﻿@model CourseViewModel
+<div class="card card-header">
+<h1 class="text-center border-bottom border-top border-2 m-5" style="color:burlywood">Update item</h1>
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="Name" class="m-1">Name</label>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div>
+        <label asp-for="Price" class="m-1"></label>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        <input asp-for="Price" class="form-control">
+    </div>
+
+        <div>
+            <label asp-for="Hours" class="m-1"></label>
+            <span asp-validation-for="Hours" class="text-danger"></span>
+            <input asp-for="Hours" class="form-control">
+        </div>
+
+    <div>
+        <label asp-for="Description" class="m-1"></label>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        <input asp-for="Description" class="form-control">
+    </div><br />
+    <div class="card-footer  text-center">
+            <button asp-fragment="#" class=" btn btn-success" onclick="return confirm('Are you Sure to update this item ?')">Update</button>
+            <a asp-action="Index" asp-fragment="#" class="btn btn-primary  w-25 fw-bold">Cancel</a>
+    </div>
+</form>
+</div>
+
+
+

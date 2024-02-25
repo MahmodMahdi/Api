@@ -1,0 +1,65 @@
+﻿@model UserViewModel
+@{
+    var courses = ViewBag.courses;
+}
+<div class="card card-header">
+<h1 class="text-center m-5" style="color:orange;font-size:30px">Update User</h1>
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="Name" class="m-1">Name</label>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div>
+        <label asp-for="Age" class="m-1"></label>
+            <span asp-validation-for="Age" class="text-danger"></span>
+        <input asp-for="Age" class="form-control">
+    </div>
+
+    <div>
+        <label asp-for="Address" class="m-1"></label>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        <input asp-for="Address" class="form-control">
+    </div>
+
+    <div>
+        <label asp-for="Phone" class="m-1"></label>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        <input asp-for="Phone" class="form-control">
+    </div>
+
+        <div>
+            <label asp-for="CourseId" class="m-1"></label>
+            <span asp-validation-for="CourseId" class="text-danger"></span>
+            <select class="form-select" asp-for="CourseId" asp-items="courses"></select>
+        </div>
+
+    <div>
+        <label asp-for="Email" class="m-1"></label>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        <input asp-for="Email" class="form-control">
+    </div>
+
+
+        <div>
+            <label asp-for="Password" class="m-1"></label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input asp-for="Password" class="form-control">
+        </div>
+
+        <div>
+            <label asp-for="ConfirmPass" class="m-1"></label>
+            <span asp-validation-for="ConfirmPass" class="text-danger"></span>
+            <input asp-for="ConfirmPass" class="form-control">
+        </div><br />
+
+        <div class="card-footer  text-center">
+            <button asp-fragment="i" class="btn btn-success" onclick="return confirm('Are you Sure to update this item ?')">Update</button>
+            <a asp-action="Index" asp-fragment="i" class="btn btn-primary  w-25 fw-bold">Cancel</a>
+        </div>
+</form>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

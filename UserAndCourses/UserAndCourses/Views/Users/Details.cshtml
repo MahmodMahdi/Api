@@ -1,0 +1,24 @@
+﻿@model UserViewModel
+@{
+	var user = Model;
+	var crs = ViewBag.CourseName;
+}
+<div class="card card-header">
+	<h1 class="text-center border border-3 bg-dark" style="color:sandybrown">Selected Item</h1>
+	<div class="card shadow">
+		<div class="card-body align-self-center">
+			<h2 class="card-title" style="color:blue">Name :  @user.Name</h2>
+			<h5 class="card-text text-muted">Age : @user.Age</h5>
+			<h5 class="card-text text-muted">Address : @user.Address</h5>
+			<h5 class="card-text text-muted">Phone : @user.Phone</h5>
+			<h4 class="card-text text-muted">Course : @(crs?.Name ?? "Not Assign")</h4>
+			<h5 class="card-text text-dark fw-bold">Email : @user.Email</h5>
+			<h5 class="card-text text-dark fw-bold">Password : @user.Password</h5>
+			<div class="card-footer  text-center">
+			<br /><a asp-action="Index" asp-fragment="i" class="btn btn-primary">Return back</a>
+				<a asp-action="Edit" asp-fragment="i" asp-route-id="@user.Id" class=" btn btn-info  fw-bold m-3">Edit</a>
+				<a asp-action="Delete" asp-fragment="i" asp-route-id="@user.Id" class="btn btn-danger  fw-bold m-3" onclick="return confirm('Are you Sure to delete ?')">Delete</a>
+			</div>
+		</div>
+	</div>
+</div>

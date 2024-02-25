@@ -1,0 +1,39 @@
+﻿@model Login
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title> Login form </title>
+</head>
+<body>
+    <form  asp-controller="Users" asp-action="Index">
+        <div class="box">
+            <div class="form">
+                <h2> Sign in</h2>
+                <div>
+                    <label asp-for="Email" class="m-1"></label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <input asp-for="Email" class="form-control">
+                </div>
+
+                <div>
+                    <label asp-for="Password" class="m-1"></label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <input asp-for="Password" class="form-control">
+                </div>
+                <div class="links">
+                    <a href="#">Forgot password</a>
+                    <a href="#">Sign up</a>
+                </div>
+                <input type="Submit" value="login">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
